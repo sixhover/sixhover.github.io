@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="glava">
+        <a href=""><img src="logo_zigz.jpg" alt="" class="logo"></a>
+        <div class="menu">
+            <a href="">domov</a>
+            <a href="">beati</a>
+            <a href="">kontakt</a>
+        </div>
+    </div>
+
+    <div class="slide-screen">
+        <h2 class="predvajaj_h">predvajaj latest beat</h2>
+        <div class="controls">
+            <img src="back_logo (1).png" alt="Beat" id="Naslednja" class="back_logo">
+            <img src="play_logo-removebg-preview.png" alt="Beat" id="beatImage" class="play_logo">
+            <img src="music-next-next-button.svg" alt="Beat" id="Naslednja" class="next_logo" onclick="nextTrack()">
+
+        </div>
+        <audio id="beatAudio" src="gift_to_God.mp3"></audio>
+    </div>
+
+
+
+    <div class="yt-promo">
+        <h2 class="yt-promo_h">poglej na youtubu:</h2>
+        <div class="videi">
+
+            <div class="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/vHBGhxEgiL0?si=MiLlzyt2OMCrVrCQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <divclass="video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/k8KCqCa9WuY?si=-AW-1LsUBuTGGKPM"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+
+    </div>
+    <audio id="beatAudio" src="gift_to_God.mp3"></audio>
+    </div>
+
+    <div>
+        <h2 class="yt-promo_h" style="text-align: center;">kupite izdelke:</h2>
+        <div class="izdelki">
+
+            <div class="izdelek">
+                <img class="drumkits" src="parts_viewer01.jpg" alt="">
+                <a href="">Prenesite zdaj</a>
+            </div>
+            <div class="izdelek">
+                <img class="drumkits" src="parts_viewer01.jpg" alt="">
+                <a href="">Prenesite zdaj</a>
+            </div>
+        </div>
+
+
+    </div>
+    <audio id="beatAudio" src="gift_to_God.mp3"></audio>
+    </div>
+
+
+
+
+
+
+    <script>/*To sem naredil z chatom, ker še nisem vedel kako ampak se mi je zdela ideja dobra*/
+        const image = document.getElementById('beatImage');
+        const audio = document.getElementById('beatAudio');
+        const nextBtn = document.querySelector('.next_logo');
+        const prevBtn = document.querySelector('.back_logo');
+        // Previous track logic
+        function prevTrack() {
+            track_index = (track_index - 1 + track_list.length) % track_list.length;
+            loadTrack(track_index);
+            audio.currentTime = 0;
+            // Do not play automatically
+        }
+
+        prevBtn.addEventListener('click', prevTrack);
+
+        // Track list for the player
+        const track_list = [
+            {
+                name: "Night Owl",
+                artist: "Broke For Free",
+                image: "Image URL",
+                path: "stay_away_from_the_mountain.mp3"
+            },
+            {
+                name: "Enthusiast",
+                artist: "Tours",
+                image: "Image URL",
+                path: "gift_to_God.mp3"
+            },
+            {
+                name: "Enthusiast",
+                artist: "Tours",
+                image: "Image URL",
+                path: "i_was_so_addicted.mp3"
+            }
+        ];
+
+        let track_index = 0;
+
+        // Function to load a track
+        function loadTrack(index) {
+            if (track_list[index]) {
+                audio.src = track_list[index].path;
+                audio.load();
+            }
+        }
+
+        // Play/pause logic
+        image.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.currentTime = 0;
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        });
+
+        // Next track logic
+        function nextTrack() {
+            track_index = (track_index + 1) % track_list.length;
+            loadTrack(track_index);
+            audio.currentTime = 0;
+            // Do not play automatically
+        }
+
+        nextBtn.addEventListener('click', nextTrack);
+
+        // Initial load
+        loadTrack(track_index);
+
+
+        const logo = document.getElementById('logo');
+        logo.addEventListener('click', () => {
+            logo.classList.toggle('rotate');
+        });
+
+
+
+    </script>
+</body>
+
+</html>

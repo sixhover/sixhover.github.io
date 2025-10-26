@@ -1,0 +1,138 @@
+.glava {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #111;
+    font-family: metropolis;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.logo {
+    height: 50px;
+    border-radius: 50px;
+    animation: rotate 5s linear infinite;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.slide-screen {
+
+    height: 300px;
+    background-color: lightgray;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+}
+
+.yt-promo {
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    padding-top: 10px;
+    padding-bottom: 50px;
+    margin-bottom: 40px;
+}
+
+.yt-promo_h {
+    text-align: left;
+    margin-left: 5px;
+
+}
+
+.videi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.video {
+    margin-right: 10px;
+}
+
+.play_logo {
+    height: 300px;
+    display: block;
+    margin: auto;
+    width: 300px;
+
+}
+
+.play_logo:hover {
+    cursor: pointer;
+}
+
+.next_logo {
+    height: 300px;
+    display: block;
+    margin: auto;
+    width: 200px;
+}
+
+.next_logo:hover {
+    cursor: pointer;
+}
+
+.back_logo {
+    height: 200px;
+    display: block;
+    margin: auto;
+    width: 200px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.predvajaj_h {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: metropolis;
+}
+
+body {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    font-family: metropolis;
+}
+
+.drumkits {
+    display: block;
+    width: 200px;
+
+}
+
+
+.izdelki {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+@font-face {
+    font-family: 'metropolis';
+    src: url(nimbus-roman-no9-l/NimbusRomNo9L-Reg.otf);
+}
